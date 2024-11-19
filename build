@@ -1,0 +1,22 @@
+#!/bin/sh
+
+OUTPUT="main"
+
+CC="clang"
+
+CFLAGS="-Wall -Wextra -O3"
+
+SRC="main.c cpu.c alu.c dmis.c fcis.c iois.c ram.c ccu.c code.c"
+
+OBJ=$(echo $SRC | sed 's/\.c/\.o/g')
+
+echo "Compiling source files..."
+$CC $CFLAGS -c $SRC
+
+echo "Linking objects..."
+$CC $CFLAGS -o $OUTPUT $OBJ
+
+echo "Removing object files..."
+rm $OBJ
+
+echo "Compilation finished. Binary: $OUTPUT"
