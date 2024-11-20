@@ -9,7 +9,7 @@
 #include "code.h"
 
 int main() {
-	puts("MARCH Bios v0.1 alpha build 2024-07-31");
+	puts("TARCH Bios v0.2 alpha build 2024-11-20");
 	puts("------------------------------------------------------");
 	puts("Starting registers...");
 	start_reg();
@@ -18,11 +18,15 @@ int main() {
 	puts("Decoding...");
 	decode();
 	puts("Running...");
-	for (int i = 0; i < code_size; i++) {
-		fetch();
-		run();
+	if (memory[0].value != 0) {
+		while (1) {
+			fetch();
+			run();
+		}
+	} else {
+		puts("RAN are empty! No instruction to read");
+		puts("Shutting down...");
+		getchar();
 	}
-	puts("Shutting down...");
-	getchar();
 	return 0;
 }
