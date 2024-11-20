@@ -54,7 +54,7 @@
 | MUL   | 3              | reg1       | reg2       | reg3       |
 | DIV   | 4              | reg1       | reg2       | reg3       |
 | LOAD  | 5              | reg        | addr       | -          |
-| STORE | 6              | reg        | addr       | -          |
+| STORE | 6              | addr        | reg       | -          |
 | MOVE  | 7              | reg1       | reg2       | -          |
 | LOADI | 8              | reg        | value      | -          |
 | AND   | 9              | reg1       | reg2       | reg3       |
