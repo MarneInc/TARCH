@@ -45,7 +45,7 @@
 
 ## *Instruction Set*
 
-*TARCH contains 22 usable instructions, separated into 4 different categories. The following table presents the name of each instruction, its opcode, and the necessary arguments, see:*
+*TARCH contains 23 usable instructions, separated into 4 different categories. The following table presents the name of each instruction, its opcode, and the necessary arguments, see:*
 
 | Name  | Operation Code | Argument 1 | Argument 2 | Argument 3 |
 |-------|----------------|------------|------------|------------|
@@ -53,24 +53,25 @@
 | SUB   | 2              | reg1       | reg2       | reg3       |
 | MUL   | 3              | reg1       | reg2       | reg3       |
 | DIV   | 4              | reg1       | reg2       | reg3       |
-| LOAD  | 5              | reg        | addr       | -          |
-| STORE | 6              | addr        | reg       | -          |
-| MOVE  | 7              | reg1       | reg2       | -          |
-| LOADI | 8              | reg        | value      | -          |
-| AND   | 9              | reg1       | reg2       | reg3       |
-| OR    | 10             | reg1       | reg2       | reg3       |
-| XOR   | 11             | reg1       | reg2       | reg3       |
-| CMP   | 12             | reg1       | reg2       | -          |
-| JMP   | 13             | addr       | -          | -          |
-| JE    | 14             | addr       | -          | -          |
-| JNE   | 15             | addr       | -          | -          |
-| JG    | 16             | addr       | -          | -          |
-| JL    | 17             | addr       | -          | -          |
-| JGE   | 18             | addr       | -          | -          |
-| JLE   | 19             | addr       | -          | -          |
-| INP   | 20             | type        | addr         | -          |
-| OUT   | 21             | type        | addr          | -          |
-| EXIT  | 22             | code       | -          | -          |
+| AND   | 5              | reg1       | reg2       | reg3       |
+| OR    | 6              | reg1       | reg2       | reg3       |
+| XOR   | 7              | reg1       | reg2       | reg3       |
+| NOT   | 8              | reg1       | reg2       | -          |
+| LOAD  | 9              | reg        | addr       | -          |
+| STORE | 10             | addr       | reg        | -          |
+| LOADI | 11             | reg        | value      | -          |
+| MOVE  | 12             | reg1       | reg2       | -          |
+| CMP   | 13             | reg1       | reg2       | -          |
+| JMP   | 14             | addr       | -          | -          |
+| JE    | 15             | addr       | -          | -          |
+| JNE   | 16             | addr       | -          | -          |
+| JG    | 17             | addr       | -          | -          |
+| JL    | 18             | addr       | -          | -          |
+| JGE   | 19             | addr       | -          | -          |
+| JLE   | 20             | addr       | -          | -          |
+| INP   | 21             | type       | addr       | size       |
+| OUT   | 22             | type       | addr       | size       |
+| HALT  | 23             | -          | -          | -          |
 
 *Here is a brief explanation of how to use each instruction:*
 
@@ -114,14 +115,14 @@
 #include "code.h"
 
 int code[] = {
-    8,0,7,0,
-    8,1,10,0,
+    11,0,7,0,
+    11,1,10,0,
     1,0,1,2,
-    6,55535,2,0,
-    21,0,55535,0,
-    22,0,0,0,
+    10,55535,2,0,
+    22,0,55535,1,
+    23,0,0,0,
 };
 int code_size = sizeof(code) / sizeof(code[0]);
 ```
 
-*In this example, I moved the number 7 to register 0, moved 10 to register 1, added register 0 to register 1, and stored the results in register 2. After that, I moved the value of register 2 to the address of memory 55535, and I printed its value and closed the program. Note that in instructions 8 (LOADI), 6 (STORE) and 21 (OUT) I put 0 as the third argument. This is because these instructions do not need a third argument, so I set it to 0. This is necessary because the CCU assumes that all instructions have 3 arguments. If you do not define a third argument, it will give a segmentation fault.*
+*In this example, I moved the number 7 to register 0, moved 10 to register 1, added register 0 to register 1, and stored the results in register 2. After that, I moved the value of register 2 to the address of memory 55535, and I printed its value and closed the program. Note that in instructions 11 (LOADI) and 10 (STORE), I put 0 as the third argument. This is because these instructions do not need a third argument, so I set it to 0. This is necessary because the CCU assumes that all instructions have 3 arguments. If you do not define a third argument, it will give a segmentation fault.*
