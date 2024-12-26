@@ -11,6 +11,7 @@ void DIV(uint16_t reg1, uint16_t reg2, uint16_t reg3);
 void AND(uint16_t reg1, uint16_t reg2, uint16_t reg3);
 void OR(uint16_t reg1, uint16_t reg2, uint16_t reg3);
 void XOR(uint16_t reg1, uint16_t reg2, uint16_t reg3);
+void NOT(uint16_t reg1, uint16_t reg2);
 void CMP(uint16_t reg1, uint16_t reg2);
 
 #endif

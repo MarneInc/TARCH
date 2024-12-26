@@ -1,16 +1,11 @@
 #include <stdio.h>
 #include "cpu.h"
 #include "ram.h"
-#include "alu.h"
-#include "dmis.h"
-#include "fcis.h"
-#include "iois.h"
 #include "ccu.h"
-#include "code.h"
 
 int main() {
-	puts("TARCH Bios v0.2 alpha build 2024-11-20");
-	puts("------------------------------------------------------");
+	puts("TARCH Bios v0.3 alpha build 2024-12-26");
+	puts("--------------------------------------");
 	puts("Starting registers...");
 	start_reg();
 	puts("Starting RAM...");
@@ -24,9 +19,8 @@ int main() {
 			run();
 		}
 	} else {
-		puts("RAN are empty! No instruction to read");
-		puts("Shutting down...");
-		getchar();
+		puts("RAM are empty! No instruction to read");
+    halt();
 	}
 	return 0;
 }

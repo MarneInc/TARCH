@@ -2,7 +2,7 @@
 
 reg registers[16];
 
-char char_table[94] = {
+char char_table[95] = {
 	'a', 'b', 'c', 'd',
 	'e', 'f', 'g', 'h',
 	'i', 'j', 'k', 'l',
@@ -26,7 +26,7 @@ char char_table[94] = {
 	',', '.', '<', '>',
 	'/', '?', ';', ':',
 	'[', ']', '{', '}',
-	'"',
+	'"', ' '
 };
 
 uint16_t pc = 0;
@@ -48,4 +48,10 @@ void start_reg() {
 		registers[i].name = i;
 		registers[i].value = 0;
 	}
+}
+
+void halt() {
+  puts("Shutting Down...");
+  getchar();
+  exit(0);
 }

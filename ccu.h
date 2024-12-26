@@ -2,6 +2,7 @@
 #define CCU_H
 
 #include <stdlib.h>
+#include <stdio.h>
 #include "cpu.h"
 #include "ram.h"
 #include "alu.h"

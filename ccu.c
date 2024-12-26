@@ -31,61 +31,65 @@ int run() {
 			DIV(arg1, arg2, arg3);
 			break;
 		case 5:
-			LOAD(arg1, arg2);
-			break;
-		case 6:
-			STORE(arg1, arg2);
-			break;
-		case 7:
-			MOVE(arg1, arg2);
-			break;
-		case 8:
-			LOADI(arg1, arg2);
-			break;
-		case 9:
 			AND(arg1, arg2, arg3);
 			break;
-		case 10:
+		case 6:
 			OR(arg1, arg2, arg3);
 			break;
-		case 11:
+		case 7:
 			XOR(arg1, arg2, arg3);
 			break;
+    case 8:
+      NOT(arg1, arg2);
+      break;
+		case 9:
+			LOAD(arg1, arg2);
+			break;
+		case 10:
+			STORE(arg1, arg2);
+			break;
+		case 11:
+			LOADI(arg1, arg2);
+			break;
 		case 12:
-			CMP(arg1, arg2);
+			MOVE(arg1, arg2);
 			break;
 		case 13:
-			JMP(arg1);
+			CMP(arg1, arg2);
 			break;
 		case 14:
-			JE(arg1);
+			JMP(arg1);
 			break;
 		case 15:
-			JNE(arg1);
+			JE(arg1);
 			break;
 		case 16:
-			JG(arg1);
+			JNE(arg1);
 			break;
 		case 17:
-			JL(arg1);
+			JG(arg1);
 			break;
 		case 18:
-			JGE(arg1);
+			JL(arg1);
 			break;
 		case 19:
-			JLE(arg1);
+			JGE(arg1);
 			break;
 		case 20:
-			INP(arg1, arg2);
+			JLE(arg1);
 			break;
 		case 21:
-			OUT(arg1, arg2);
+			INP(arg1, arg2, arg3);
 			break;
 		case 22:
-			return 0;
+			OUT(arg1, arg2, arg3);
 			break;
+		case 23:
+			halt();
+      break;
 		default:
-			break;
+			puts("Invalid Instruction");
+      halt();
 	}
 	return 0;
 }
