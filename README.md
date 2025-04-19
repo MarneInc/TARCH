@@ -45,7 +45,7 @@
 
 ## *Instruction Set*
 
-*TARCH contains 23 usable instructions, separated into 4 different categories. The following table presents the name of each instruction, its opcode, and the necessary arguments, see:*
+*TARCH contains 25 usable instructions, separated into 4 different categories. The following table presents the name of each instruction, its opcode, and the necessary arguments, see:*
 
 | Name  | Operation Code | Argument 1 | Argument 2 | Argument 3 |
 |-------|----------------|------------|------------|------------|
@@ -72,6 +72,8 @@
 | INP   | 21             | type       | addr       | size       |
 | OUT   | 22             | type       | addr       | size       |
 | HALT  | 23             | -          | -          | -          |
+| INC   | 24             | reg        | -          | -          |
+| DEC   | 25             | reg        | -          | -          |
 
 *Here is a brief explanation of how to use each instruction:*
 
