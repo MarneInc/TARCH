@@ -50,8 +50,8 @@ void start_reg() {
 	}
 }
 
-void halt() {
-  puts("Shutting Down...");
-  getchar();
-  exit(0);
+void HLT(uint16_t code, uint16_t m, uint16_t n) {
+	puts("Shutting Down...");
+	getchar();
+	exit(code);
 }

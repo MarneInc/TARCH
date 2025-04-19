@@ -35,12 +35,12 @@ void XOR(uint16_t reg1, uint16_t reg2, uint16_t reg3) {
 	registers[reg3].value = result;
 }
 
-void NOT(uint16_t reg1, uint16_t reg2) {
+void NOT(uint16_t reg1, uint16_t reg2, uint16_t m) {
   uint16_t number = registers[reg1].value;
   registers[reg2].value = ~number;
 }
 
-void CMP(uint16_t reg1, uint16_t reg2) {
+void CMP(uint16_t reg1, uint16_t reg2, uint16_t m) {
 	uint16_t a = registers[reg1].value;
 	uint16_t b = registers[reg2].value;
 
@@ -69,4 +69,12 @@ void CMP(uint16_t reg1, uint16_t reg2) {
 	if (a <= b) {
 		lle = 1;
 	}
+}
+
+void INC(uint16_t reg, uint16_t m, uint16_t n) {
+	registers[reg].value += 1;
+}
+
+void DEC(uint16_t reg, uint16_t m, uint16_t n) {
+	registers[reg].value -= 1;
 }

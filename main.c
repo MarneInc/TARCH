@@ -4,7 +4,7 @@
 #include "ccu.h"
 
 int main() {
-	puts("TARCH Bios v0.3 alpha build 2024-12-26");
+	puts("TARCH Bios v0.4 alpha build 2025-04-19");
 	puts("--------------------------------------");
 	puts("Starting registers...");
 	start_reg();
@@ -16,11 +16,11 @@ int main() {
 	if (memory[0].value != 0) {
 		while (1) {
 			fetch();
-			run();
+			run(opcode, arg1, arg2, arg3);
 		}
 	} else {
 		puts("RAM are empty! No instruction to read");
-    halt();
+    	HLT(1, 0, 0);
 	}
 	return 0;
 }

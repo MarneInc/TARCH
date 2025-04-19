@@ -29,6 +29,6 @@ extern uint16_t lge;
 extern uint16_t lle;
 
 void start_reg();
-void halt();
+void HLT(uint16_t code, uint16_t m, uint16_t n);
 
 #endif

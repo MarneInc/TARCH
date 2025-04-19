@@ -13,6 +13,6 @@
 
 void decode();
 void fetch();
-int run();
+void run(uint16_t icode, uint16_t a1, uint16_t a2, uint16_t a3);
 
 #endif
