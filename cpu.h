@@ -28,6 +28,8 @@ extern uint16_t ll;
 extern uint16_t lge;
 extern uint16_t lle;
 
+extern uint16_t sp;
+
 void start_reg();
 void HLT(uint16_t code, uint16_t m, uint16_t n);
 

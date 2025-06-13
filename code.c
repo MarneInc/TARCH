@@ -25,6 +25,7 @@
 #define HLT 23
 #define INC 24
 #define DEC 25
+#define RET 26
 
 #define R0 0
 #define R1 1
@@ -47,11 +48,17 @@
 #define CHR 1
 
 int code[] = {
-	LDI,R0,7,0,
-	LDI,R1,10,0,
-	ADD,R0,R1,R2,
-	STR,55535,R2,0,
-	OUT,INT,55535,1,
-	HLT,0,0,0,
+	JMP, 12, 0, 0,
+	OUT, INT, 55536, 1,
+	RET, 0, 0, 0,
+	LDI, R0, 7, 0,
+	LDI, R1, 10, 0,
+	LDI, R3, 8, 0,
+	ADD, R0, R1, R2,
+	STR, 55535, R2, 0,
+	STR, 55536, R3, 0,
+	JMP, 4, 0, 0,
+	OUT, INT, 55535, 1,
+	HLT, 0, 0, 0,
 };
 int code_size = sizeof(code) / sizeof(code[0]);

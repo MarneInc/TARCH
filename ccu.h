@@ -6,9 +6,9 @@
 #include "cpu.h"
 #include "ram.h"
 #include "alu.h"
-#include "dmis.h"
-#include "iois.h"
-#include "fcis.h"
+#include "dmu.h"
+#include "iou.h"
+#include "fcu.h"
 #include "code.h"
 
 void decode();

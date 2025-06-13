@@ -2,11 +2,11 @@
 
 OUTPUT="main"
 
-CC="clang"
+CC=$1
 
 CFLAGS="-Wall -Wextra -O3"
 
-SRC="main.c cpu.c alu.c dmis.c fcis.c iois.c ram.c ccu.c code.c"
+SRC="main.c cpu.c alu.c dmu.c fcu.c iou.c ram.c ccu.c code.c"
 
 OBJ=$(echo $SRC | sed 's/\.c/\.o/g')
 

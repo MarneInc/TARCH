@@ -1,5 +1,5 @@
-#ifndef IOIS_H
-#define IOIS_H
+#ifndef IOU_H
+#define IOU_H
 
 #include "cpu.h"
 #include "ram.h"

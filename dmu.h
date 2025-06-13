@@ -1,5 +1,5 @@
-#ifndef DMIS_H
-#define DMIS_H
+#ifndef DMU_H
+#define DMU_H
 
 #include "cpu.h"
 #include "ram.h"

@@ -1,4 +1,4 @@
-#include "dmis.h"
+#include "dmu.h"
 
 void LD(uint16_t reg, uint16_t addrss, uint16_t m) {
 	registers[reg].value = memory[addrss].value;

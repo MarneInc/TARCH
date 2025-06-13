@@ -43,6 +43,8 @@ uint16_t ll = 0;
 uint16_t lge = 0;
 uint16_t lle = 0;
 
+uint16_t sp = 55407;
+
 void start_reg() {
 	for (int i = 0; i < 16; i++) {
 		registers[i].name = i;
